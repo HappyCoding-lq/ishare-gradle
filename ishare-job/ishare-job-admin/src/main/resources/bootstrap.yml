@@ -1,0 +1,35 @@
+server:
+  port: 8006
+spring:
+  application:
+    name: ishare-job-admin
+    # 资源信息
+  messages:
+    # 国际化资源文件路径
+    basename: i18n/messages
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: Asia/Shanghai
+  profiles:
+    default: dev
+    active: ${PROFILE:dev}
+  main:
+    allow-bean-definition-overriding: true
+  mvc:
+    static-path-pattern: /static/**
+  resources:
+    static-locations: classpath:/static/
+  # freemarker配置
+  freemarker:
+    charset: UTF-8
+    request-context-attribute: request
+    settings:
+      number_format: 0.##########
+    suffix: .ftl
+    templateLoaderPath: classpath:/templates/
+# MyBatis配置
+mybatis:
+  mapper-locations: classpath:/mybatis-mapper/*Dao.xml
+feign:
+  hystrix:
+    enabled: true

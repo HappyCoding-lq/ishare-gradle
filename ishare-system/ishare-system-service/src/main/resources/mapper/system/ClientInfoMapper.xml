@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.dddpeter.ishare.system.mapper.ClientInfoMapper">
+    
+    <resultMap type="ClientInfo" id="ClientInfoResult">
+        <result property="id"    column="id"    />
+        <result property="appid"    column="appId"    />
+        <result property="appsecret"    column="appSecret"    />
+        <result property="appname"    column="appName"    />
+        <result property="description"    column="description"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectClientInfoVo">
+        select id, appId, AES_DECRYPT(UNHEX(appSecret), appId) as appSecret, appName, description, create_time, update_time from client_info
+    </sql>
+
+    <select id="selectClientInfoList" parameterType="ClientInfo" resultMap="ClientInfoResult">
+        <include refid="selectClientInfoVo"/>
+        <where>  
+            <if test="appname != null  and appname != ''"> and appName like concat('%', #{appname}, '%')</if>
+        </where>
+    </select>
+    
+    <select id="selectClientInfoById" parameterType="Long" resultMap="ClientInfoResult">
+        <include refid="selectClientInfoVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertClientInfo" parameterType="ClientInfo">
+        insert into client_info
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null ">id,</if>
+            <if test="appid != null  and appid != ''">appId,</if>
+            <if test="appsecret != null  and appsecret != ''">appSecret,</if>
+            <if test="appname != null  and appname != ''">appName,</if>
+            <if test="description != null  and description != ''">description,</if>
+            <if test="createTime != null ">create_time,</if>
+            <if test="updateTime != null ">update_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null ">#{id},</if>
+            <if test="appid != null  and appid != ''">#{appid},</if>
+            <if test="appsecret != null  and appsecret != ''">HEX(AES_ENCRYPT(#{appsecret},#{appid})),</if>
+            <if test="appname != null  and appname != ''">#{appname},</if>
+            <if test="description != null  and description != ''">#{description},</if>
+            <if test="createTime != null ">#{createTime},</if>
+            <if test="updateTime != null ">#{updateTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateClientInfo" parameterType="ClientInfo">
+        update client_info
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="appid != null  and appid != ''">appId = #{appid},</if>
+            <if test="appsecret != null  and appsecret != ''">appSecret = HEX(AES_ENCRYPT(#{appsecret},#{appid})),</if>
+            <if test="appname != null  and appname != ''">appName = #{appname},</if>
+            <if test="description != null  and description != ''">description = #{description},</if>
+            <if test="createTime != null ">create_time = #{createTime},</if>
+            <if test="updateTime != null ">update_time = #{updateTime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteClientInfoById" parameterType="Long">
+        delete from client_info where id = #{id}
+    </delete>
+
+    <delete id="deleteClientInfoByIds" parameterType="String">
+        delete from client_info where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+    
+</mapper>

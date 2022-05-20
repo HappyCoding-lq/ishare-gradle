@@ -1,0 +1,22 @@
+export default [
+  { 'paymentSerialNumber': '00000000021002222', 'orderNumber': '0000000000000000', 'bankAccount': '工商银行', 'cardNumber': '0000000000000000', 'paymentMethod': '实时扣款', 'state': '成功', 'amount': '100.00', 'options': '详情' },
+  { 'paymentSerialNumber': '00000000021002222', 'orderNumber': '0000000000000000', 'bankAccount': '工商银行', 'cardNumber': '0000000000000000', 'paymentMethod': '实时扣款', 'state': '成功', 'amount': '100.00', 'options': '详情' },
+  { 'paymentSerialNumber': '00000000021002222', 'orderNumber': '0000000000000000', 'bankAccount': '工商银行', 'cardNumber': '0000000000000000', 'paymentMethod': '实时扣款', 'state': '成功', 'amount': '100.00', 'options': '详情' },
+  { 'paymentSerialNumber': '00000000021002222', 'orderNumber': '0000000000000000', 'bankAccount': '工商银行', 'cardNumber': '0000000000000000', 'paymentMethod': '实时扣款', 'state': '成功', 'amount': '100.00', 'options': '详情' },
+  { 'paymentSerialNumber': '00000000021002222', 'orderNumber': '0000000000000000', 'bankAccount': '工商银行', 'cardNumber': '0000000000000000', 'paymentMethod': '实时扣款', 'state': '成功', 'amount': '100.00', 'options': '详情' },
+  { 'paymentSerialNumber': '00000000021002222', 'orderNumber': '0000000000000000', 'bankAccount': '工商银行', 'cardNumber': '0000000000000000', 'paymentMethod': '实时扣款', 'state': '成功', 'amount': '100.00', 'options': '详情' },
+  { 'paymentSerialNumber': '00000000021002222', 'orderNumber': '0000000000000000', 'bankAccount': '工商银行', 'cardNumber': '0000000000000000', 'paymentMethod': '实时扣款', 'state': '成功', 'amount': '100.00', 'options': '详情' },
+  { 'paymentSerialNumber': '00000000021002222', 'orderNumber': '0000000000000000', 'bankAccount': '工商银行', 'cardNumber': '0000000000000000', 'paymentMethod': '实时扣款', 'state': '成功', 'amount': '100.00', 'options': '详情' },
+  { 'paymentSerialNumber': '00000000021002222', 'orderNumber': '0000000000000000', 'bankAccount': '工商银行', 'cardNumber': '0000000000000000', 'paymentMethod': '实时扣款', 'state': '成功', 'amount': '100.00', 'options': '详情' },
+  { 'paymentSerialNumber': '00000000021002222', 'orderNumber': '0000000000000000', 'bankAccount': '工商银行', 'cardNumber': '0000000000000000', 'paymentMethod': '实时扣款', 'state': '成功', 'amount': '100.00', 'options': '详情' },
+  { 'paymentSerialNumber': '00000000021002222', 'orderNumber': '0000000000000000', 'bankAccount': '工商银行', 'cardNumber': '0000000000000000', 'paymentMethod': '实时扣款', 'state': '成功', 'amount': '100.00', 'options': '详情' },
+  { 'paymentSerialNumber': '00000000021002222', 'orderNumber': '0000000000000000', 'bankAccount': '工商银行', 'cardNumber': '0000000000000000', 'paymentMethod': '实时扣款', 'state': '成功', 'amount': '100.00', 'options': '详情' },
+  { 'paymentSerialNumber': '00000000021002222', 'orderNumber': '0000000000000000', 'bankAccount': '工商银行', 'cardNumber': '0000000000000000', 'paymentMethod': '实时扣款', 'state': '成功', 'amount': '100.00', 'options': '详情' },
+  { 'paymentSerialNumber': '00000000021002222', 'orderNumber': '0000000000000000', 'bankAccount': '工商银行', 'cardNumber': '0000000000000000', 'paymentMethod': '实时扣款', 'state': '成功', 'amount': '100.00', 'options': '详情' },
+  { 'paymentSerialNumber': '00000000021002222', 'orderNumber': '0000000000000000', 'bankAccount': '工商银行', 'cardNumber': '0000000000000000', 'paymentMethod': '实时扣款', 'state': '成功', 'amount': '100.00', 'options': '详情' },
+  { 'paymentSerialNumber': '00000000021002222', 'orderNumber': '0000000000000000', 'bankAccount': '工商银行', 'cardNumber': '0000000000000000', 'paymentMethod': '实时扣款', 'state': '成功', 'amount': '100.00', 'options': '详情' },
+  { 'paymentSerialNumber': '00000000021002222', 'orderNumber': '0000000000000000', 'bankAccount': '工商银行', 'cardNumber': '0000000000000000', 'paymentMethod': '实时扣款', 'state': '成功', 'amount': '100.00', 'options': '详情' },
+  { 'paymentSerialNumber': '00000000021002222', 'orderNumber': '0000000000000000', 'bankAccount': '工商银行', 'cardNumber': '0000000000000000', 'paymentMethod': '实时扣款', 'state': '成功', 'amount': '100.00', 'options': '详情' },
+  { 'paymentSerialNumber': '00000000021002222', 'orderNumber': '0000000000000000', 'bankAccount': '工商银行', 'cardNumber': '0000000000000000', 'paymentMethod': '实时扣款', 'state': '成功', 'amount': '100.00', 'options': '详情' },
+  { 'paymentSerialNumber': '00000000021002222', 'orderNumber': '0000000000000000', 'bankAccount': '工商银行', 'cardNumber': '0000000000000000', 'paymentMethod': '实时扣款', 'state': '成功', 'amount': '100.00', 'options': '详情' }
+]

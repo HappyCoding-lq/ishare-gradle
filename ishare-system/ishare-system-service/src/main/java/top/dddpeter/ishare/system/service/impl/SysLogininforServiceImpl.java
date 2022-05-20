@@ -1,0 +1,67 @@
+package top.dddpeter.ishare.system.service.impl;
+
+import org.springframework.stereotype.Service;
+import top.dddpeter.ishare.common.core.text.Convert;
+import top.dddpeter.ishare.system.domain.SysLogininfor;
+import top.dddpeter.ishare.system.mapper.SysLogininforMapper;
+import top.dddpeter.ishare.system.service.ISysLogininforService;
+
+import javax.annotation.Resource;
+import java.util.List;
+
+/**
+ * 系统访问日志情况信息 服务层处理
+ * 
+ * @author ishare
+ */
+@Service
+public class SysLogininforServiceImpl implements ISysLogininforService
+{
+
+    @Resource
+    private SysLogininforMapper logininforMapper;
+
+    /**
+     * 新增系统登录日志
+     * 
+     * @param logininfor 访问日志对象
+     */
+    @Override
+    public void insertLogininfor(SysLogininfor logininfor)
+    {
+        logininforMapper.insertLogininfor(logininfor);
+    }
+
+    /**
+     * 查询系统登录日志集合
+     * 
+     * @param logininfor 访问日志对象
+     * @return 登录记录集合
+     */
+    @Override
+    public List<SysLogininfor> selectLogininforList(SysLogininfor logininfor)
+    {
+        return logininforMapper.selectLogininforList(logininfor);
+    }
+
+    /**
+     * 批量删除系统登录日志
+     * 
+     * @param ids 需要删除的数据
+     * @return
+     */
+    @Override
+    public int deleteLogininforByIds(String ids)
+    {
+        return logininforMapper.deleteLogininforByIds(Convert.toStrArray(ids));
+    }
+
+    /**
+     * 清空系统登录日志
+     */
+    @Override
+    public void cleanLogininfor()
+    {
+        logininforMapper.cleanLogininfor();
+    }
+}

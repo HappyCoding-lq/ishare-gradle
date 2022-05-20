@@ -1,0 +1,58 @@
+server: 
+  port: 9527
+
+logging:
+  level:
+    com.alibaba.nacos.client.naming: error
+#    org.springframework.cloud.gateway: debug
+ 
+spring: 
+  application:
+    name: ishare-gateway
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: Asia/Shanghai
+  devtools:
+    restart:
+      enabled: true
+  profiles:
+    default: dev
+    active: ${PROFILE:dev}
+
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      config:
+        file-extension: yml
+        ext-config:
+          - dataId: ishare.yml
+            group: DEFAULT_GROUP
+            refresh: true
+hystrix:
+  command:
+    default:  #default全局有效，service id指定应用有效
+      execution:
+        timeout:
+          enabled: true
+        isolation:
+          thread:
+            timeoutInMilliseconds: 5000 #断路器超时时间，默认1000ms
+# MyBatis配置
+mybatis:
+  configuration:
+    # 表字段自动转驼峰属性配置
+    mapUnderscoreToCamelCase: true
+# 通用Mapper插件配置
+mapper:
+  # 设置insert和update中，是否判断字符串类型!=''
+  not-empty: true
+  # 主键自增回写方法,默认值MYSQL
+  identity: MYSQL
+# PageHelper分页插件配置
+pagehelper:
+  # 数据库方言
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql

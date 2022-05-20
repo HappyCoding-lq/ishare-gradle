@@ -1,0 +1,36 @@
+server:
+  port: 8005
+# 日志配置
+logging:
+  level:
+    top.dddpeter.ishare: debug
+    org.springframework: warn 
+    com.alibaba.nacos.client.naming: error 
+spring:
+  application:
+    name: ishare-auth
+   # 资源信息
+  messages:
+    # 国际化资源文件路径
+    basename: i18n/messages
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: Asia/Shanghai
+  profiles:
+    default: dev
+    active: ${PROFILE:dev}
+  main:
+    allow-bean-definition-overriding: true
+  
+feign: 
+  hystrix: 
+    enabled: true
+
+ 
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 15000

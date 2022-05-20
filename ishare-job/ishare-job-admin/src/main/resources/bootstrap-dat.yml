@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: 192.101.7.215:8848
+        file-extension: yml
+        namespace: ishare-dat
+      discovery:
+        server-addr: 192.101.7.215:8848
+        namespace: ishare-dat
