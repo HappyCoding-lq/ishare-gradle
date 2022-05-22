@@ -49,3 +49,4 @@ JOB/*
 ishare-ant
 logs/*
 .DS_Store
+**/bin/**
